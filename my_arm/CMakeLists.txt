@@ -14,7 +14,7 @@ find_package(ament_cmake REQUIRED)
 # Install folders
 install(
   DIRECTORY
-    launch
+    #launch
     urdf
     # map
     mesh
