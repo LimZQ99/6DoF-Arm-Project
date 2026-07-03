@@ -1,0 +1,11 @@
+# Default initial positions for my_arm's ros2_control fake system
+
+initial_positions:
+  base_joint: 1.57
+  elbow_joint: -0.19
+  elbow_roll_joint: 0
+  shoulder_joint: 0.85
+  wrist_pitch_joint: -0.668
+  wrist_roll_joint: 0
+
+
