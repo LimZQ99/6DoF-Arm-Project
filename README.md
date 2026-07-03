@@ -1,1 +1,1 @@
-# 6DoF-Arm-Priject
+# 6DoF-Arm-Project
