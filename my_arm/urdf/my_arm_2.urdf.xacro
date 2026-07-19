@@ -269,26 +269,26 @@
         <child link="yaw_link"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit lower="0" upper="3.14" effort="10" velocity="1"/>
+        <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="shoulder_joint" type="revolute">
+  <joint name="shoulder_joint" type="fixed">
         <parent link="yaw_link"/>
         <child link="shoulder_link"/>
         <origin xyz="0 0.005 0.07" rpy="0 0 0"/>
-        <axis xyz="0 1 0"/>
-        <limit lower="0" upper="3.14" effort="10" velocity="1"/>
+        <!-- <axis xyz="0 1 0"/>
+        <limit lower="0" upper="3.14" effort="10" velocity="1"/> -->
   </joint>
 
-  <joint name="shoulder_bar_joint" type="fixed">
+  <joint name="shoulder_bar_joint" type="revolute">
         <parent link="shoulder_link"/>
         <child link="shoulder_bar_link"/>
         <origin xyz="0 -0.009 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+        <limit lower="0" upper="3.14" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="elbow_joint" type="revolute">
+  <joint name="elbow_joint" type="fixed">
         <parent link="shoulder_bar_link"/>
         <child link="elbow_link"/>
         <origin xyz="-0.182 0.018 0.071" rpy="0 0.261799 0"/>
@@ -296,15 +296,15 @@
         <limit lower="-3.14" upper="0" effort="10" velocity="1"/>
   </joint>
   
-  <joint name="elbow_bar_joint" type="fixed">
+  <joint name="elbow_bar_joint" type="revolute">
         <parent link="elbow_link"/>
         <child link="elbow_bar_link"/>
         <origin xyz="0 -0.025 0" rpy="0 -0.2799 0"/>
         <axis xyz="0 1 0"/>
-        <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+        <limit lower="-3.14" upper="0" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="elbow_roll_joint" type="revolute">
+  <joint name="elbow_roll_joint" type="fixed">
         <parent link="elbow_bar_link"/>
         <child link="roll_link"/>
         <origin xyz="0.155 0.02 0" rpy="0 0 1.57"/>
@@ -312,15 +312,15 @@
         <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="elbow_roll_frame_joint" type="fixed">
+  <joint name="elbow_roll_frame_joint" type="revolute">
         <parent link="roll_link"/>
         <child link="roll_pitch_frame_link"/>
         <origin xyz="0 -0.042 0" rpy="0 0 -1.57"/>
-        <axis xyz="0 1 0"/>
+        <axis xyz="1 0 0"/>
         <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="wrist_pitch_joint" type="revolute">
+  <joint name="wrist_pitch_joint" type="fixed">
         <parent link="roll_pitch_frame_link"/>
         <child link="wrist_pitch_link"/>
         <origin xyz="0.04 -0.032 0" rpy="0 0 0"/>
@@ -328,12 +328,12 @@
         <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-  <joint name="wrist_pitch_bar_joint" type="fixed">
+  <joint name="wrist_pitch_bar_joint" type="revolute">
         <parent link="wrist_pitch_link"/>
         <child link="wrist_pitch_bar_link"/>
         <origin xyz="0 0.04 0" rpy="0 0 1.57"/>
-        <axis xyz="0 1 0"/>
-        <limit lower="0" upper="3.14" effort="10" velocity="1"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
   <joint name="wrist_roll_joint" type="revolute">
@@ -341,7 +341,7 @@
         <child link="wrist_roll_link"/>
         <origin xyz="-0.015 -0.07 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <limit lower="0" upper="3.14" effort="10" velocity="1"/>
+        <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
     
